@@ -4,7 +4,7 @@ async function getResponse() {
     data = data.filter((e) => {
        return (/\.biz/igm).test(e.email)
     })
-    let list = document.querySelector('.comments__email');
+    let list = await document.querySelector('.comments__email');
     for (key in data) {
         const newElems = `
         <li class="comments__email_post">
