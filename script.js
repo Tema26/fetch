@@ -7,24 +7,29 @@ async function getResponse() {
     let list = await document.querySelector('.comments__email');
     for (key in data) {
         const newElems = `
-        <li class="comments__email_post">
-        <div class="comment_id">
+        <section class="comments__email_post">
+        <article class="comment_id">
            id: ${data[key].id}
-        </div> 
-        <div class="comment_name">
+        </article> 
+        <article class="comment_name">
             Name: ${data[key].name}
-        </div>
-        <div class="comment_email">
+        </article>
+        <article class="comment_email">
             User email: ${data[key].email}
-        </div>   
-        <div class="comment_body">
+        </article>   
+        <article class="comment_body">
             Text: "${data[key].body}"
-        </div>       
+        </article>       
          `
         list.innerHTML += newElems;
+        localStorage.setItem('username', 'admin')
     }
 
 }
 
-getResponse();
+let btn1 = document.getElementById('btn_login');
+
+btn1.onclick = getResponse();
+
+
 
