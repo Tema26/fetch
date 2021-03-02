@@ -4,7 +4,6 @@ async function getResponse() {
     data = data.filter((e) => {
        return (/\.biz/igm).test(e.email)
     })
-    let list = await document.querySelector('.comments__email');
     for (let item of data) {
         const newElems = `
         <section class="comments__email_post">
@@ -34,6 +33,7 @@ let list = document.querySelector('.comments__email');
 btn1.onclick = getResponse;
 btn2.onclick = () => {
     list.innerHTML = '';
+    localStorage.clear()
 };
  
 
