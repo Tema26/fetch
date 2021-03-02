@@ -4,7 +4,7 @@ async function getResponse() {
     data = data.filter((e) => {
        return (/\.biz/igm).test(e.email)
     })
-    for (let item of data) {
+    data.forEach (item =>{
         const newElems = `
         <section class="comments__email_post">
         <article class="comment_id">
@@ -22,7 +22,7 @@ async function getResponse() {
          `
         list.innerHTML += newElems;
         localStorage.setItem('username', 'admin')
-    }
+    })
 
 }
 
