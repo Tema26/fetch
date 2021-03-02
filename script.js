@@ -28,8 +28,14 @@ async function getResponse() {
 }
 
 let btn1 = document.getElementById('btn_login');
+let btn2 = document.getElementById('btn_logout');
+let list = document.querySelector('.comments__email');
 
-btn1.onclick = getResponse();
+btn1.onclick = getResponse;
+btn2.onclick = () => {
+    list.innerHTML = '';
+};
+ 
 
 
 
