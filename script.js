@@ -5,20 +5,20 @@ async function getResponse() {
        return (/\.biz/igm).test(e.email)
     })
     let list = await document.querySelector('.comments__email');
-    for (key in data) {
+    for (let item of data) {
         const newElems = `
         <section class="comments__email_post">
         <article class="comment_id">
-           id: ${data[key].id}
+           id: ${item.id}
         </article> 
         <article class="comment_name">
-            Name: ${data[key].name}
+            Name: ${item.name}
         </article>
         <article class="comment_email">
-            User email: ${data[key].email}
+            User email: ${item.email}
         </article>   
         <article class="comment_body">
-            Text: "${data[key].body}"
+            Text: "${item.body}"
         </article>       
          `
         list.innerHTML += newElems;
